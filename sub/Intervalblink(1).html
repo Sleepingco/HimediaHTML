@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width:50px;height:50px;border:1px solid gray;
+    }    
+</style>
+<body>
+    <table>
+    <tr><td><div id="dv1"></div></td><td><div id="dv2"></div></td><td><div id="dv3"></div></td><td><div id="dv4"></div></td><td><div id="dv5"></div></td><td><div id="dv6"></div></td><td><div id="dv7"></div></td><td><div id="dv8"></div></td><td><div id="dv9"></div></td><td><div id="dv10"></div></td><td><div id="dv11"></div></td><td><div id="dv12"></div></td><td><div id="dv13"></div></td></tr>
+    
+    <tr><td colspan="10"><input type=button id=btnStart value=start>&nbsp;<input type=button id=btnStop value=stop></td></tr>
+    </table>
+</body>
+<script>
+    let k=1;
+    let i=1;
+    let timeset=null;
+    let flag=1;
+    let flag1=true;
+    let limit=document.getElementsByTagName('div').length;
+    /* document.getElementById("btnStart").addEventListener('click',function(){
+        timeset=setInterval(function(){
+            if(flag==1){
+                for(i=1; i<10;i++){
+                    if(i==k){
+                        document.getElementById('dv'+k).style="background-color: red";
+                    }else{
+                        document.getElementById('dv'+i).style="background-color: white";
+                    }
+                }k++;
+                console.log(k,i,flag);
+                if(k==10){
+                        flag--;
+                    }
+            }else if(flag==0){
+                for(i=10;i>=1;i--){
+                    if(i==k){
+                        document.getElementById('dv'+k).style="background-color: red";
+                    }else{
+                        document.getElementById('dv'+i).style="background-color: white";
+                    }
+                }k--;
+                if(k==1){
+                        flag++;
+                    }
+            }
+        },100);
+    }); */
+
+    document.getElementById("btnStart").addEventListener('click',function(){
+        timeset=setInterval(function(){
+            coloring(k);
+                if(k==limit) flag1=false;
+                else if(k==1) flag1=true;
+            if(flag1)   k++;
+            else        k--;
+        },100);
+    });
+
+    function coloring(k){
+        for(i=1; i<=limit;i++){
+            if(i==k){
+                document.getElementById('dv'+k).style="background-color: red";
+            }else{
+                document.getElementById('dv'+i).style="background-color: white";
+            }
+        }
+    }
+    document.getElementById("btnStop").addEventListener('click',function(){
+        if(timeset!=null) clearInterval(timeset);
+    });
+</script>
+</html>

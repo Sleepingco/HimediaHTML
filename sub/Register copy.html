@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    td{
+        border:1px solid gray;
+    }
+    td:nth-child(1){
+        text-align: right;
+    }
+</style>
+<body>
+    <table>
+        <tr><td>사용자 아이디</td><td><input type="text" id="userid" name="userid" size=12></td></tr>
+        <tr><td>비밀번호</td><td><input type="password" id="passcode" name="passcode" size=12></td></tr>
+        <tr><td>확인</td><td><input type="password" id="passcode2" name="passcode2" size12></td></tr>
+        <tr><td>실명</td><td><input type="text" id="name" name="name" size=12></td></tr>
+        <tr><td>성별</td><td><input type="radio" id="male" name="gender">남</td><td><input type="radio" id="female" name="gender">여</td></tr>
+        <tr><td>생년월일</td><td><input type="date" id="birthday" name="birthday" ></td></tr>
+        <tr><td>모바일</td><td><input type="text" id="mobile" name="mobile" size=12></td></tr>
+        <tr><td><거주지역></td><td>
+            <select name="selRegion" id="selRegion">
+                <option value="">서울시</option>
+                <option value="">고양시</option>
+                <option value="">파주시</option>
+                <option value="">김포시</option>
+                <option value="">기타</option>
+            </select>
+        </td></tr>
+        <tr><td>Favorite Game</td><td>
+            <input type="checkbox" name="game" id="lol" value="League Of Legend">리그오브레전드
+            <input type="checkbox" name="game" id="starcraft2" value="starcraft2">스타크래프트2
+            <input type="checkbox" name="game" id="overwatch" value="overwatch">오버워치
+            <input type="checkbox" name="game" id="tarkov" value="tarkov">타르코프
+            <input type="checkbox" name="game" id="SimulatorX" value="SimulatorX">시뮬레이터X
+            <input type="checkbox" name="game" id="EuroTruck" value="EuroTruck">유로트럭
+            <input type="checkbox" name="game" id="WOT" value="World of Tank">월드오브탱크
+            <input type="checkbox" name="game" id="DongSoup" value="AnimalForest">동물의숲
+            <input type="checkbox" name="game" id="BattleGroud" value="BattleGroud">배틀그라운드
+
+        </td>
+        </tr>
+        <tr><td colspan="2"><input type="button" id="btnCheck" value="확인"></td></tr>
+        <tr><td colspan=2><div id=dvCheck style="width:300px;height:200px;background-color:yellow;border:1px solid blue;"></div></td></tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+  /* h1{}
+  #id{}
+  .class{}
+  td:nth-child(3){}
+  td:first{} */
+</style>
+<body>
+<h1>JavaScript Class Inheritance</h1>
+
+<p>Use the "extends" keyword to inherit all methods from another class.</p>
+<p>Use the "super" method to call the parent's constructor function.</p>
+
+
+<p id="demo"></p>
+
+<p id="demo1"></p>
+
+<script>
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.carmodel = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.carmodel;
+  }
+}
+
+const myCar = new Model("Ford", "Mustang");
+document.getElementById("demo").innerHTML = myCar.show();
+// let Car = function(){
+    //     let color;
+    //     let model;
+    //     let maxSpeed;
+    //     let speed;
+
+    //     setColor: function(color){
+    //         this.color=color;
+    //     }
+    //     getColor: function(){
+    //         return this.color;
+    //     }
+    // }클래스 지원하기전에는 이렇게 썻다 카더라
+ 
+  document.getElementById("demo1").innerHTML = 
+"The full URL of this page is:<br>" + window.location.href;
+
+document.getElementById('demo');
+document.querySelector('.bgWhite').value='hello';
+document.querySelector('#demo').innerHTML='';
+document.querySelector('h1').value='news title';
+document.querySelector('td:nth-child(3)').text='Numbers';
+document.querySelector('td.tdBig').text='Big';
+document.querySelector('table tr:eq(0) td:eq(1)').text='etoile';
+
+let idstr='divFirst';
+document.querySelector('divFirst').className='bgYellow';// 아래 셋다 같은 코드, 상황따라 쓴다
+document.querySelector(idstr).className='bgYellow';// 아래 셋다 같은 코드, 상황따라 쓴다
+document.querySelector('div:eq(0)').className='bgYellow';
+document.querySelector('#divFirst').className='bgYellow';
+
+// getElementById(), getElementsByname(),getElementsByTagName(),getElementsByClassName() 등등 대체 가능
+// <!-- 같은태그에서는 인덱스 번호가 붙는다 td1 td2 td3... -->
+</script>
+
+</body>
+</html>

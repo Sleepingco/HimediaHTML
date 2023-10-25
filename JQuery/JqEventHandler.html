@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="date" id="date">
+    <input type="text" id="txtName">
+    <br><br>
+    <input type="button" id="btnGo" value="Go">
+    <br><br>
+    <label id="lblName" style="background-color: yellow;width: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document)
+.on('click','#btnGo',function(e,u){
+    console.log(e);
+    console.log(u);
+    $('#lblName').text($('#txtName').val());
+})
+
+/* .on('keydown','#txtName',function(event,ui){ //keydown keypress keyup
+    console.log('code='+event.which);
+    console.log(event);
+    if(event.which==13){    //enter key pressed
+        
+        $('#btnGo').trigger('click');
+    }
+}) */
+
+.on('keydown','#txtName',function(event,ui){ //keydown keypress keyup
+    console.log('keydown='+event.which);
+    $('#lblName').text($('#txtName').val());
+})
+
+.on('keyup','#txtName',function(event,ui){ //keydown keypress keyup
+    console.log('keyup='+event.which);
+})
+.on('keypress','#txtName',function(event,ui){ //keydown keypress keyup
+    console.log('keypress='+event.which);
+})
+
+.on('mouseenter','#btnGo',function(){ //keydown keypress keyup
+    $(this).css('background-color','yellow');
+})
+.on('mouseleave','#btnGo',function(){ //keydown keypress keyup
+    $(this).css('background-color','gray');
+})
+
+.on('mouseenter','#txtName',function(){ //keydown keypress keyup
+    $(this).val('Hello');
+})
+
+.on('mouseleave','#txtName',function(){ //keydown keypress keyup
+    $(this).val("GoodBye")
+})
+</script>
+</html>

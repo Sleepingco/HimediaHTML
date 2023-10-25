@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><p>이름</p></td><td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td><p>모바일</p></td><td><input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="display" id="btnGo" onclick="PersonDisplay()"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><div id="dvDisplay" style="width:200px; height: 100px;border: 1px solid black;"></div></td>
+        </tr>
+    </table>
+</body>
+<script>
+    
+    function PersonDisplay(){
+        if(document.getElementById('btnGo').value=='display'){
+        let n = document.getElementById("name").value ;
+        let m = document.getElementById("mobile").value;
+        document.getElementById("dvDisplay").innerHTML='이름: '+n+'<br>'+'모바일: '+m;
+        /* document.getElementById("dvDisplay").innerHTML='이름: '+document.getElementById("name").value+'번호 '+document.getElementById("mobile").value; */
+        document.getElementById('dvDisplay').style='background-color:yellow;width:200px; height: 100px;border: 1px solid black;'
+        let pStyle = 'background-color:aqua;';
+        document.getElementById("name").style=pStyle;
+        document.getElementById("mobile").style=pStyle;
+        document.getElementById("btnGo").value='clear';
+
+        }else{
+            document.getElementById("dvDisplay").innerHTML='';
+            document.getElementById("mobile").value='';
+            document.getElementById("name").value='';
+
+            let pStyle = 'background-color:white;';
+            document.getElementById("name").style=pStyle;
+            document.getElementById("mobile").style=pStyle;
+            document.getElementById("dvDisplay").style=pStyle+'width:200px; height: 100px;border: 1px solid black;';
+            document.getElementById("btnGo").value="display";
+        }
+    }
+
+</script>
+</html>

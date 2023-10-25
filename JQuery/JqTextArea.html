@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="radio" name="country" value="Singapore" id="sg">Singapore<br>
+<input type="radio" name="country" value="vietnam" id="vt">Vietnam<br>
+<input type="radio" name="country" value="Canada" id="ca">Canada<br>
+<input type="radio" name="country" value="Thailand" id="th">Thailand<br><br><br>
+
+<input type="checkbox" name="favorite" value="IVE">아이브<br>
+<input type="checkbox" name="favorite" value="NewJeans">뉴진스<br>
+<input type="checkbox" name="favorite" value="BlackPink">블랙핑크<br>
+<input type="checkbox" name="favorite" value="StayC">스테이씨<br>
+<input type="checkbox" name="favorite" value="GrilIdle">아이들<br>
+<input type="checkbox" name="favorite" value="Aespa">에스파<br>
+<input type="checkbox" name="favorite" value="Twice">트와이스<br><br><br><br><br><br><br>
+<textarea id="txtComment"cols="30" rows="10"></textarea>
+<br><br><br>
+<div id="dvDisplay"></div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    //문제있으면 console.log(n) 쓰자 ㅇㅋ? //문제있으면 console.log(n) 쓰자 ㅇㅋ?
+    $(document)
+    .ready(function(){
+        $('#txtComment').val('경기도 고양이 일산동구 정발산로 43-210\n 센트럴 플라자 407호');
+    })
+
+    .on('change blur clock','#txtComment',function(){//textarea는 문자만 입력하고 html태그를 렌더링 하지 못함 그러므로 입력하지 않기 때문에 val()을 사용함 .val()메소드를 이용해서 get/set -문자열 줄바꿈표시는 \n(not<br>)
+        let str=$('#txtComment').val();//이벤트 간에 구분은 띄어쓰기로함
+        $('#dvDisplay').text(str);  
+    })
+    .on('change','[name=favorite]',function(){//change는 select에서 기존 선택을 바꿨을때 발생하고 <input type=text/number/date/hidden>,<textarea> - 값이 바뀐후에 focus를 잃을때 (blur) <input type=radio/checkbox>-상태/선택이 바뀔떄
+        console.log($(this).val());
+    })      //이부분 억울해서라도 본자
+
+    .on('click','input[name=favorite]',function(){
+        let str='';
+        $.each($('input[name=favorite]:checked'),function(){
+            str+=$(this).val()+'<br>'
+        })
+        $('#dvDisplay').html(str);
+    });
+    
+
+    $(document)
+    .on('click','#sg,#vt,#ca,#th',function(){
+        let str = $(this).val();
+        $('#dvDisplay').text(str);
+    })
+    .on('click','[name=gender]','[name=mountain]','#userid',function(){
+
+    })
+</script>
+</html>

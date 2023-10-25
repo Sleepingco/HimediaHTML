@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td:nth-child(1){
+        text-align: right;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid blue;
+    }
+</style>
+<body>
+    <form action="" method="get">
+       <input type="hidden" name="hidetext" value="helloworld"><!-- 숨겨진 텍스트 프로그래머가 개발에 필요한 데이터를 저장할때 숨기는 기능 -->
+        <table><!-- 모든 태그는 아이디를 줄 수 있음 -->
+            <tr><td><label for="id">ID</label></td><td> <input type="text" name="usId" value="xaexal"size="12" maxlength="12" disabled></td></tr>
+            <tr><td><label for="pw">PW</label></td><td><input type="password" name="usPw" size="12"maxlength="12" placeholder="●●●●●●●●●●●●" required></td></tr>
+            <tr><td> <label for="pwcfrm">PW Confirm</label></td><td><input type="password" name="usPwCfrm" size="12"maxlength="12"></td></tr>
+            <tr><td><label for="name">Name</label></td><td><input type="text" name="Name" size="12"maxlength="12" autofocus></td></tr>
+            <tr><td>sex</td><td>  <input type="radio" id="male" name="gender" value="male" checked>male
+                <input type="radio" id="male" name="gender" value="female">female</td></tr>
+            <tr><td><label for="phone">Phone Number</label></td><td><input type="phone" name="Phone" size="12"maxlength="12"></td></tr>
+            <tr><td>지역</td><td><select name="region" id="region" size="4">
+                <option value="일산동구" selected>일산동구</option>
+                <option value="일산서구">일산서구</option>
+                <option value="deok_yang">일산덕양구</option>
+            </select></td></tr>
+           <tr><td>사진 업로드</td><td><input type="file"></td></tr>
+            <tr><td colspan="2" style="text-align: center;"><input type="submit" value="submit">&nbsp;
+                <input type="reset" value="clear"></td></tr>
+        </table>
+    </form>
+    <input type="button" onclick="showCircle()" value="draw circle"></button><br><br>
+    <canvas id="cnv" style="width: 200px; height: 100px; border: 1px solid red;"></canvas>
+</body>
+  <script>
+        function showCircle(){
+            var c=document.getElementById("cnv");
+            var ctx=c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    </script>
+
+</html>

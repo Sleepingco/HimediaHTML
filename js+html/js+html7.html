@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="selCountry" size="6">
+        <option>Korea</option> <!-- value 안쓰면 그 안에 텍스트로 자동 지정됨 -->
+        <option>USA</option>
+        <option>Canada</option>
+        <option>Singapore</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" id="btnGo" value="getCountry" >
+        <input type="button" id="btnSet" value="setCountry" >
+        <br>
+        <br>
+        <div id="dvResult" style="width:200px;height: 100px;border: 1px solid blue;"></div>
+        
+</body>
+<script>
+document.getElementById("btnGo").addEventListener('click',function(){
+ if(document.getElementById("selCountry").value==''){
+            alert('나라를 하나 선택하세요')
+        } else{
+        document.getElementById("dvResult").innerHTML=document.getElementById("selCountry").value;
+        }
+
+});
+document.getElementById("btnSet").addEventListener('click',function(){
+        let s = prompt('나라이름 입력');
+        s = "<option>"+s+"</option>";
+        document.getElementById('selCountry').innerHTML+=s;
+       // ==
+        //document.getElementById('selCountry').innerHTML=document.getElementById('selCountry').innerHTML;
+        
+});
+   
+</script>
+</html>

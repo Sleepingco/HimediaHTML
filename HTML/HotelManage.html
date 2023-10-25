@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelManage</title>
+</head>
+<style>
+    body{
+        font-size: 25px
+    }
+    tr{
+        font-size: 30px;
+    }
+    input, select{
+        font-size: 25px;
+    }
+    
+    table{
+        width: 100%;
+    }
+    .centered { display: table; margin-left: auto; margin-right: auto; }
+</style>
+<body>
+    <h5 style="text-align: center;">호텔 예약 관리</h5>
+    <table class="centered" style="width: 95%; border-collapse: collapse; ">
+    <tr>
+        <td valign=top style="width: 30%;border: 1px solid black;">
+            <table>
+                <tr>
+                    <td><Label for="datetime">숙박기간</Label><input type="date">~<input type="date"></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%;"><label for="RoomType" style="width: 70%;">객실타입</label><select name="RoomType" id="RoomType">
+                        <option>전체</option>
+                        <option>SuiteRoom</option>
+                        <option>FanilyRoom</option>
+                        <option>DeluexRoom</option>
+                        </select>
+                        <input type="Button" value="찾기" style="width: 30%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="centered">예약가능 객실</td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2"><select name="able" id="able" size="17" style="width: 100%;">
+                        <option>101 백두산 SuiteRoom 7명</option>
+                        <option>102 한라산 FamilyRoom 6명</option>
+                        <option>103 지리산 DeluxeRoom 5명</option>
+                    </select></td>
+                </tr>
+            </table>
+        </td>
+        <td style="width: 5%;"></td>
+        <td valign=top style="width: 30%;border: 1px solid black;">
+            <table>
+                <tr><td colspan="3"><p align="center">예약 세부내역</p></td></tr>
+                <tr>
+                    <td style="width: 250px;">예약번호</td><td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>객실번호</td><td><input type="number" min="0" max="7"></td>
+                </tr>
+                <tr>
+                    <td>객실명</td><td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>객실타입</td>
+                    <td class="centered" colspan="3"><select name="able" id="able" size="">
+                        <option>101 백두산 SuiteRoom 7명</option>
+                        <option>102 한라산 FamilyRoom 6명</option>
+                        <option>103 지리산 DeluxeRoom 5명</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>예약자</td><td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;">모바일번호</td><td><input type="phone"></td>
+                </tr>
+                <tr>
+                    <td><Label for="datetime">숙박기간</Label></td><td><input type="date" style="font-size: 27px;">~<input type="date" style="font-size: 20px;"></td>
+                </tr>
+                <tr>
+                    <td>비용총액</td><td><input type="number" readonly><td>원</td>
+                </tr>
+                <tr >
+                    <td align="center" colspan="2"><input type="button" value="예약완료"><input type="button" value="비우기"><input type="button"value="예약취소"></td>
+                    
+                </tr>
+            </table>
+           
+        </td>
+        
+        <td style="width: 5%;"></td>
+        <td valign=top style="width: 30%;border: 1px solid black;">
+            <table>
+                <caption>예약된 객실</caption>
+                
+                
+                <tr><td align="center" colspan="2"><select name="reservation" id="reservation" size="20" style="width: 100%; height: max-content;">
+                    <option>101 백두산 SuiteRoom 7명</option>
+                        <option>102 한라산 FamilyRoom 6명</option>
+                        <option>103 지리산 DeluxeRoom 5명</option>
+                </select></td></tr>
+            </table>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

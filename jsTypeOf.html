@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="lbl"for=""style="background-color:yellow;"></label>
+    <br><br>
+    <input type="button" id="btnGo" value="Go">
+</body>
+<script>
+    // "strict mode"//엄격진지모드
+    let i=prompt('input');
+
+    document.getElementById('lbl').innerHTML=typeof i;
+    document.getElementById('btnGo').addEventListener('click',function(){
+        i=true;
+        console.log(typeof i);
+        if(typeof i =="boolean"){
+
+        }else if(typeof i == "number"){
+
+        }
+        // location.href='https://www.naver.com';  //둘은 같은 코드
+        // document.location='https://www.naver.com'
+        document.location='./js+html/js+html.html' //location.href,document.location은 어디에 위치했든지 마지막에 실행된다.
+        alert('....')
+    });
+
+   
+</script>
+</html>

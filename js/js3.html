@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!--  변수 dynamic type conversion js (비효율)
+         static type conversion java -->
+<!--     <input type="button" value="Let'sgo" style="color: red;"><br> -->
+</body>
+<script>
+    // js는 문자비교열도 ==이다
+    // let s = "hello";
+    // // s.equals("hello")
+    // if(s=="hello");
+    // if(s!="hello");
+    /* Java:문자열표시 ""(큰따옴표만 사용가능)
+        String s = "hello"
+        String s1 = 'Hello' //error
+    JS:문자열 표시(큰따옴표, 작은따옴표 모두 사용가능)
+    let s = "Hello"; let s2 = "let's go"; let s4 = 'Let"go';
+    let s1 = 'Hello'; let s3 = 'Let's go'; // error "Let"s go";*/
+   /*  i=1;
+    j=7;
+    document.write("7x1="+i*j);
+    document.write("<br>")
+    document.write("7x2="+ ++i*j);
+    document.write("<br>")
+    document.write("7x3="+ ++i*j);
+    document.write("<br>")
+    document.write("7x4="+ ++i*j);
+    document.write("<br>")
+    document.write("7x5="+ ++i*j);
+    document.write("<br>")
+    document.write("7x6="+ ++i*j);
+    document.write("<br>")
+    document.write("7x7="+ ++i*j);
+    document.write("<br>")
+    document.write("7x8="+ ++i*j);
+    document.write("<br>")
+    document.write("7x9="+ ++i*j);
+    document.write("<br>")
+    document.write("<br>") */
+    
+    /* for(let a=2;a<10;a++){
+        for(let b=1;b<10;b++){
+            document.write(a+"x"+b+"="+a*b+"<br>")
+        }
+        document.write("<br>")
+    } */
+    /* if('Hello'>'hello')
+    alert('Hello if bigger'); //반환값 없음
+    else
+    alert('"Hello" is less or equal than hello');//true/false를 반환
+    alert("break")
+    let answer=confirm("select any object.");
+    document.write(answer+"<br>");
+    if(answer){ //if(answer==true)
+        document.write("keep go");
+    }else{
+        document.write("stop")
+    } */
+    /* let reply = prompt("wirte your name",'홍길동'); //문자열 반환
+    document.write(reply); */
+   /*  let name = prompt("이름을 입력하시오");
+    document.write(name+"<br>");
+    let phone = prompt("모바일 번호를 입력하시오");
+    document.write(phone+"<br>");
+    let loc = prompt("거주지역을 입력하시오");
+    document.write(loc+"<br>") */
+
+    /* let tag = prompt('html 문자열을 입력','<input type="button" value="Let`s go" style="color: red;">');
+    document.write(tag); */
+    
+   /*  let a=prompt('정수를 입력하시오');
+    a=parseInt(a);
+    let b=prompt('또다른 정수를 입력하시오');
+    b=parseInt(b)
+    let x=a+b;
+    document.write(x);
+    document.write('<br>')
+    let c=3.14;
+    let s= c.toString(); == let c= ''+3.14;
+    document.write(s); */
+
+    /* let i =prompt('단수를 입력');
+       i = parseInt(i);
+        for(b=1;b<10;b++){
+            document.write(i+"x"+b+"="+i*b)
+            document.write("<br>")
+        } */
+    /* let i=5;
+    let j=3;
+    let k=4;
+    if(i>j&&j<k){
+        document.write(i,j,k)
+    }
+    document.write("<br>")
+    let answer = confirm("프로그램 종료") //if(answer==false) ==if(!answer) if(answer==true) ==if(answer)
+    if(!answer){
+        let i =3+5;
+        document.write(i);
+    }
+    document.write("<br>프로그램종료") */
+
+    /* let score =prompt('점수를 입력하세요');
+        score=parseInt(score);
+        if(score==100){
+            document.write("A+")
+        }else if(score>=90){
+            document.write("A")
+        }else if(score>=80){
+            document.write("B")
+        }else if(score>=70){
+            document.write("C")
+        }else if(score>=60){
+            document.write("D")
+        }else{
+            document.write("F")
+        } */
+        
+        /* i=0;
+        a=0;
+        while(a<100){
+            a++;
+           i+=a;
+            
+        }
+        document.write(i); */
+        /* let a = prompt('숫작입력1');
+        let b = prompt('숫자입력2');
+        a=parseFloat(a)
+        b=parseFloat(b)
+        document.write(a+'+'+b+'='+(a+b)+'<br>');
+        document.write(a+'-'+b+'='+(a-b)+'<br>');
+        document.write(a+'*'+b+'='+(a*b)+'<br>');
+        document.write(a+'/'+b+'='+(a/b)+'<br>');
+        document.write(a+'%'+b+'='+(a%b)+'<br>'); */
+        /* let i=0
+        while(i<10){
+            i++;
+            document.write(i+'<br>');
+            
+        } */
+        /* let i=0;
+        let sum=0;
+        while(i<=100){
+            sum=sum+i;
+            i++;
+        }
+        document.write(sum); */
+        /* let i=2;
+        while(i<10){
+            let j=1;
+            
+            while(j<10){
+                document.write(i+'x'+j+'='+(i*j)+'<br>');
+                j++;
+            }
+            document.write('<br>');
+            i++;
+        } */
+        /* let i=0,j=1,k=i+j;
+        while(i<1000){
+            document.write(i+'<br>');
+            i=j;
+            j=k;
+            k=i+j;
+        } */
+        /* let j=1,k=1;
+        for(i=0;i<10000;){
+            document.write(i+'<br>');
+            i=j;
+            j=k;
+            k=i+j;
+        } */
+        /* let ar = ['Hello','World','Good','Morning','vietnam'];
+        document.write(ar[0]+'<br>')
+        document.write(ar[1]+'<br>')
+        document.write(ar[2]+'<br>')
+        document.write(ar[3]+'<br>')
+        document.write(ar[4]+'<br>') */
+        /* let ar = ['Hello','World','Good','Morning','vietnam'];
+        for(let i=0;i<ar.length;i++){
+        document.write(ar[i]+'<br>')
+    } */
+    /* let ar = ['Hello',3,4,true,3.14];
+        for(let i=0;i<ar.length;i++){
+        document.write(ar[i]+'<br>')
+    } */
+   /*  let ar1 = new Array(10); //<-길이가 10인 배열 undefined 10개
+    document.write('length '+ar1.length+'<br>');
+    document.write(ar1[0]+'<br>')
+    if(ar1[0]==undefined){
+        document.write('data is not defined<br>')
+    }else{
+        document.write('data='+ar1[0]+'<br>')
+    }
+    let ar2 = new Array(10,1); //<-길이가 2인 배열[10,1]
+    document.write('length '+ar2.length+'<br>');
+    let ar3 = new Array('xaexal');
+    document.write('ar3.lengths='+ar3.length+'<br>')
+    document.write('ar[0]='+ar3[0]+'<br>')
+    // n/0 =a 불능 0Xn=n, 0/n =a 부정(undefined) nXa=0 */
+
+    /* let ar = [];
+    let answer = prompt('insert');
+    document.write('before push, length =' +ar.length+'<br>');
+    ar.push(answer);
+    document.write('after push length='+ar.length+'<br>'+ar[0]); */
+
+    /* Scanner s = new Scanner(System.in); //자바코드
+    ArrayList<String> alMenu  new ArrayList<Sring>();
+
+    String name=s.nextLine();
+    while(!name.equals("")){
+        alMenu.add(name);
+        name = s.nextLine()
+    } */
+
+/* let arMenu = [];
+let name = prompt('메뉴명을 입력하시오.');
+while(name!=''){
+    arMenu.push(name);
+    name  = prompt('메뉴명을 입력하시오')
+}
+for(let i=0; i<arMenu.length;i++){
+    document.write(arMenu[i]+'<br>');B
+}
+document.write('<br>Program terminated.'); */
+
+/* let arMenu =[], arPrice=[];
+let Menu = prompt('메뉴명을 입력하시오.');
+while(Menu!=''){
+    arMenu.push(Menu);//맨뒤배열에 추가
+    Price = prompt('가격을 입력하시오');
+    arPrice.push(Price);
+    Menu = prompt('메뉴명을 입력하시오.');
+}
+for(let i=0; i<arMenu.length;i++){
+    document.write('메뉴명:&nbsp'+arMenu[i]+'&nbsp가격:&nbsp'+arPrice[i]+'<br>')
+} */
+
+
+let ar = ['바나나','사과','참외','복숭아','두리안']
+document.write('['+ar.toString()+']'+'<br>');
+document.write('['+ar.join(' / ')+']'+'<br>'); //join도 디폴트가 , 이다
+ar.push('배');
+ar.push('크랜배리');
+document.write('['+ar.join(' / ')+']'+'<br>');
+ar.pop();//맨뒤에 배열이 사라짐 그러면서 리턴함
+let k=ar.pop();
+document.write('['+ar.join(' / ')+'] after POP()'+'['+k+']'+'<br>');
+ar.shift();//맨앞에 배열이 사라짐 배열이 숫자가 하나씩 당겨짐(shift)
+let x=ar.pop();
+document.write('['+ar.join(' / ')+'] after shift()'+'['+x+']'+'<br>');
+ar.unshift('수박');//맨앞에 배열에 추가함
+ar.unshift('포도');
+let g=ar.unshift();
+document.write('['+ar.join(' / ')+'] after unshift()'+'['+g+']'+'<br>');
+//자료구조 array ,linked list, tree,graph , queue(First in First out FIFO)먼저온사람이 먼저 나감  ex)은행에서 줄서면 먼저 온 사람이 가장 먼저 나감, stack(Last in First out LIFO) 
+//먼저온 사람이 제일 나중에 나감 for expample latest coming potato chip willbe come out first cause there is bottom for a first
+//join은 배열을 문자열로 ex)let ar = [abcd] s=ar.join('/') ,s='a/b/c/d'
+//split은 문자열을 배열로 ex)let ar1=s.split('/') ar1=abcd
+
+/* let ar = [14,-1,15,27,4,3,-14,24,24];
+document.write('원본'+'['+ar.toString()+']'+'<br>'+'&nbsp오름차순 정렬&nbsp');
+
+    for(base=0;base<ar.length;base++){
+        for(start=base+1;start<ar.length;start++){
+            if(ar[base]>ar[start]){
+                let temp = ar[base];
+                ar[base] = ar[start];
+                ar[start] = temp;
+            }
+        }
+        
+    }
+    document.write('['+ar.toString()+']'+'<br>');
+    for(base=0;base<ar.length;base++){
+        for(start=base+1;start<ar.length;start++){
+            if(ar[base]<ar[start]){
+                let temp = ar[base];
+                ar[base] = ar[start];
+                ar[start] = temp;
+            }
+        }
+        
+    }
+    document.write('내림차순 정렬'+'['+ar.toString()+']'+'<br>'); */
+    
+    /* const myGirls = ["Cecilie", "Lone"];//두 배열을 붙힘
+    const myBoys = ["Emil", "Tobias", "Linus"];
+    const myChildren = myGirls.concat(myBoys);
+    document.write(myChildren); */
+
+    /* let ar = [[1,2],[3,4],[5,6]];
+    document.write(ar[0][0]);
+    document.write(ar[0][1]);
+    document.write(ar[1][0]);
+    document.write(ar[1][1]);
+    document.write(ar[2][0]);
+    document.write(ar[2][1]);
+    document.write('<br>')
+    let ar1 = [['Hello','world','good'],
+                [1,3],
+                [3.14,'Morning']];
+                document.write(ar[0][0]);
+                document.write(ar[1][0]);
+                document.write('<br>') */
+
+/* const fruits = ["Banana", "Orange", "Apple", "Mango"+'<br>'];
+document.write (fruits);
+fruits.splice(2, 1, "Lemon", "Kiwi");//배열의 일부를 지우고, 그 자리에 새로운 값들로 채운다//새 값이 추가될 인덱스번호, 추가될 인덱스부터 삭제될 값이 갯수,추가값1..,추가값n)
+document.write (fruits); */
+
+/* const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(3);//slice는 인덱스n부터 배열끝까지 잘라낸다 배열 일부를 잘라내서 새 배열을 만들어 낸다
+document.write(fruits+ "<br><br>" + citrus); */
+// 7,5,3,4,10
+/* let ar = [];
+let n = prompt('값을 입력');
+while(n!=''){
+    n=parseInt(n);
+    if(ar.length==0){
+        ar.push(n);
+        }else{
+            let i;
+            for(i=0;i<ar.length;i++){
+                if(n<ar[i]){
+                    ar.splice(i,0,n);
+                    break;
+                }
+            }
+            if(i==ar.length){
+                ar.push(n);
+            }
+        }
+        n = prompt('값을 입력');
+}
+document.write(ar); */
+/* let ar = [];
+let n = prompt('값을 입력');
+while(n!=''){
+    n=parseInt(n);
+            for(i=0;i<ar.length;i++){
+                if(n<ar[i])break;
+            }
+            if(i==ar.length)
+                ar.push(n);
+            else ar.splice(i,0,n);
+        n = prompt('값을 입력');
+}
+document.write(ar); */
+        
+
+</script>
+</html>

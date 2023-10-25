@@ -1,0 +1,8 @@
+label{
+    color: red;
+    background-color: aliceblue;
+}
+body{
+    background-color: powderblue;
+}
+/* external스타일 .css file에 별도로 작성 <link href="cssfile"rel=stylesheet*/

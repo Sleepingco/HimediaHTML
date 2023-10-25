@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div style="width: max-content;height: max-content;">
+    <input type="button" id="btnGo" value="발사" style="color: black; align-content: center; background-color: red;">
+  </div>
+
+</body>
+<script>
+    /* let timeset=null;
+    document.getElementById('btnGo').addEventListener('click',function(){
+        let i = prompt('몇초 뒤에 발사할까요?');
+        i=parseInt(i);
+        timeset=setInterval(function(){
+            while(i>=0){
+                document.write(i+'<br>');
+                i--;
+                break;
+            }
+            
+        },1000);
+        document.write('발사<br>');
+    }); */
+  let timeset = null;
+document.getElementById('btnGo').addEventListener('click', function() {
+  let i = prompt('몇초 뒤에 발사할까요?');
+  i = parseInt(i);
+  timeset = setInterval(function() {
+    if (i >= 0) {
+      document.write(i + '<br>');
+      i--;
+    } else {
+      clearInterval(timeset); // 카운트다운이 끝나면 setInterval을 종료
+      document.write('발사<br>'); // 발사 메시지 출력
+    }
+  }, 1000);
+});
+</script>
+</html>

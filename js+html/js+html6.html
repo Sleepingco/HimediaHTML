@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userId" value="Hello world"><br><br>
+    <div id="dvDisplay" style="width:200px; height: 100px; background-color: yellow;border: 1px solid black;">Hello world</div><br><br>
+    <label id="lbl">Hello world</label><br><br>
+    <textarea name="" id="txt" cols="30" rows="10">Hello world</textarea><br><br>
+    <input type="button" id="btnGo" value="changeText" onclick="changeText()"> <!-- 버튼을 click 했을 때, changeText라는 함수를 실행(호출) -->
+    <input type="button" id="btnClear" value="clear Div"onclick="clearDiv()"><br><br><!-- HTML에서 동작을 선언 -->
+</body>
+<script>
+
+/* // 이벤트 이름 속성에(무명함수)를 선언 등록
+document.getElementById("btnGo").onclick = function(){
+    let k = document.getElementById("userId").value = 'good morning';
+    document.getElementById("dvDisplay").innerHTML=document.getElementById("userId").value;
+    document.getElementById("dvDisplay").innerHTML='<select><option>Korea</option><option>USA</option><option>singapore</option></select>';//innerHtml은 html tag 를 넣을수 있다
+    document.getElementById("lbl").innerHTML=document.getElementById("userId").value;
+    document.getElementById("txt").value=document.getElementById("userId").value;
+};
+
+document.getElementById("btnClear").onclick = function(){
+     document.getElementById("dvDisplay").innerHTML=null;
+    console.log(document.getElementById("dvDisplay").innerHTML);
+};*/
+
+
+ //함수 선언해두고, addEventListener에서 동작을 선언    
+document.getElementById("btnGo").addEventListener('click',changeText);//addEventListener는 getElementById에만 쓸수있다.
+function changeText(){
+    let k = document.getElementById("userId").value = 'good morning';
+    document.getElementById("dvDisplay").innerHTML='<select><option>Korea</option><option>USA</option><option>singapore</option></select>';//innerHtml은 html tag 를 넣을수 있다
+    document.getElementById("lbl").innerHTML=document.getElementById("userId").value;
+    document.getElementById("txt").value=document.getElementById("userId").value;
+}
+document.getElementById("btnClear").addEventListener('click',clearDiv);//Event이름은 따옴표쓰고 함수이름은 따옴표쓴다 중요**
+function clearDiv(){
+    document.getElementById("dvDisplay").innerHTML=null;
+    console.log(document.getElementById("dvDisplay").innerHTML);
+}
+
+
+/* document.getElementById("btnGo").addEventListener('click',function(){//제일 많이 쓰는 방식
+    let k = document.getElementById("userId").value = 'good morning';
+    document.getElementById("dvDisplay").innerHTML=document.getElementById("userId").value;
+    document.getElementById("dvDisplay").innerHTML='<select><option>Korea</option><option>USA</option><option>singapore</option></select>';//innerHtml은 html tag 를 넣을수 있다
+    document.getElementById("lbl").innerHTML=document.getElementById("userId").value;
+    document.getElementById("txt").value=document.getElementById("userId").value;
+}); */
+
+
+</script>
+</html>

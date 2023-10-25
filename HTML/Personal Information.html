@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<style>
+.newstyle{
+    color: #00ffff;
+    background-color: aliceblue;
+}
+#lblName{
+    color: bisque;
+    background-color: black;
+}
+body{
+    background-image:url('./image/puppy.webp');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size:50% 50%;
+}
+/* 클래스이용방식 */
+</style>
+    <p style="color: red;border: solid 1px;display: inline;background-color: rgba(0, 255, 255, 0.1);">&nbsp;Name </p><p style="display: inline">:&nbsp;Hong Gil Dong</p><br><br>
+    <span style="color: red;display: inline;">&nbsp;Mobile </span><P style="display: inline">:&nbsp;010-1234-5678</p><br><br>
+    <label style="color: red;">&nbsp;Team </label>:&nbsp;Web Developper
+    <!-- Inline스타일 tag안에 style 속성어-->
+    <hr>
+    <p style=color:blue;>WelCome to Web World</p>
+    <p class="newstyle">class이용 방식</p>
+    <p id="lblName">id 이용 스타일 적용</p>
+    <!-- <style>
+        /* Internal스타일 html안에  <style>태그*/
+        label{
+            color: blue;
+            background-color: rgba(44, 55, 222, 0.4);
+        }
+    </style> -->
+    <!-- style적용대상설정
+    1.tag이름 이용
+    2.class이용
+    3.id 이용 -->
+</body>
+</html>

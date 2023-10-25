@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="lblName"></label>
+    <br><br>
+    <input type="button" id="btnShow" value="show Name">
+    <br><br>
+    <input type="text" name="" id="userid">
+    <br><br>
+    <input type="button" id="btnAlert" value="show userid">
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.js"></script> -->
+</body>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<!-- 필수 -->
+<script>
+/* document.getElementById('btnShow').addEventListener('click',function(){
+    document.getElementById('lblName').innerHTML='이순신';
+});
+document.getElementById('btnShow').addEventListener('dblclick',function(){
+    document.getElementById('lblName').innerHTML='유관순';
+}); */
+
+$(document)
+.on('click','#btnShow',function(){
+    $('#lblName').text('이순신');
+})
+.on('dblclick','#btnShow',function(){
+    $('#lblName').text('유관순');//innerHtml은 .text()쓰고
+})
+.on('click','#btnAlert',function(){
+    let str = $('#userid').val();//.value은 .val()쓴다
+    alert(str);
+})
+;
+/* let str = $('#userid').val(); //getter
+$('#userid').val('홍길동'); //setter
+추가예제:$(선택자).메소드()
+.val==getter
+.val("---")==setter
+.css('style','val');==setter
+.css('style');==getter
+val()='홍길동'(x)
+val ='홍길동'(x)*/
+
+/* .addClass('classname1 classnameN')
+.removeClass('classname1 classnameN')
+.toggleClass('classname') */
+</script>
+
+
+
+</html>

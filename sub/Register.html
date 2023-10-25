@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<style>
+    table { border-collapse: collapse;}
+    td {
+        border:1px solid gray;
+    }    
+    td:nth-child(1) { text-align:right;}
+    </style>
+    <body>
+    <table>
+    <tr><td>사용자아이디</td><td><input type=text id=userid name=userid size=12></td></tr>    
+    <tr><td>비밀번호</td><td><input type=password id=passcode name=passcode size=12></td></tr>
+    <tr><td>확인</td><td><input type=password id=passcode1 name=passcode1 size=12></td></tr>
+    <tr><td>실명</td><td><input type=text id=name name=name size=12></td></tr>
+    <tr><td>성별</td><td><input type=radio id=male name=gender>남<input type=radio id=female name=gender>여</td></tr>
+    <tr><td>생년월일</td><td><input type=date id=birthday name=birthday></td></tr>
+    <tr><td>모바일</td><td><input type=text id=mobile name=mobile size=16></td></tr>
+    <tr><td>거주지역</td><td>
+        <select id="selRegion" name="selRegion" size="6">
+        <option>서울시</option>
+        <option>고양시</option>
+        <option>파주시</option>
+        <option>김포시</option>
+        <option>기타</option>
+        </select>
+    </td></tr>
+    <tr><td>게임선택</td><td>
+        <input type="checkbox" id="lol" name="game" value="League Of Legend">리그오브레전드
+        <input type="checkbox" id="starcraft2" name="game" value="starcraft2">스타크래프트2
+        <input type="checkbox" id="overwatch" name="game" value="overwatch">오버워치<br>
+        <input type="checkbox" id="tarkov" name="game" value="tarkov">타르코프
+        <input type="checkbox" id="SimulatorX" name="game" value="simulatorx">시뮬레이터X
+        <input type="checkbox" id="EuroTruck" name="game" value="eurotruck">유로트럭<br>
+        <input type="checkbox" id="WOT" name="game" value="World Of Tank">월드오프탱크
+        <input type="checkbox" id="DongSoup" name="game" value="AnimalForest">동물의숲
+        <input type="checkbox" id="BattleGround" name="game" value="BattleGround">배틀그라운드
+    </td></tr>
+    <tr><td colspan="2" style="text-align:center"><input type=button id=btnCheck value="확인"></td></tr>
+    <tr><td colspan=2 style="text-align: center;"><div id=dvCheck style="width:500px;height:200px;background-color:yellow;border:1px solid blue;"></div></td></tr>
+    </table>    
+</body>
+<script>
+   document.getElementById("btnCheck").addEventListener('click',function(){
+    let id ='';
+    let passcode='';
+    let passcode1='';
+    let name='';
+    let gender='';
+    let bday='';
+    let mobile='';
+    let region='';
+    let game='';
+  
+    if(document.getElementById("userid").value==''){
+        alert('아이디를 입력 하세요')
+        return;
+    }else{
+        id=document.getElementsByName("userid")[0].value;
+    }
+
+    if(document.getElementById("passcode").value==''){
+        alert('비밀번호를 입력 하세요')
+        return;
+    }else{
+        passcode=document.getElementsByName("passcode")[0].value;
+    }
+
+    if(document.getElementById("passcode1").value==''){
+        alert('비밀번호 확인을 입력하세요')
+        return;
+    }else{
+        passcode1=document.getElementsByName("passcode1")[0].value;
+    }
+
+    if(document.getElementById("passcode").value==''){
+        alert('실명을 입력 하세요')
+        return;
+    }else{
+        name=document.getElementsByName("name")[0].value;
+    }
+
+    if(document.getElementById("male").checked){
+        gender="남성";
+       }else if(document.getElementById("female").checked){
+        gender="여성";
+       }else{
+       alert('성별을 입력 하세요')
+       return;
+       }
+    if(document.getElementById("birthday").value==''){
+        alert('생일을 입력 하세요')
+        return;
+    }else{
+        bday=document.getElementById("birthday").value;
+    }
+
+    if(document.getElementById("mobile").value==''){
+        alert('전화번호를 입력하세요')
+        return;
+    }else{
+        mobile=document.getElementById("mobile").value;
+    }
+
+    if(document.getElementById("selRegion").value==''){
+        alert('거주지역을 선택하세요')
+        return;
+    }else{
+        region=document.getElementById("selRegion").value;
+    }
+    
+    for(let i=0; i<document.getElementsByName("game").length;i++){
+        if(document.getElementsByName("game")[i].checked){
+            if(game!="")game+=",";
+            game+=document.getElementsByName("game")[i].value;
+            }
+        }
+        if(game==''){
+            alert('게임을 하나라도 고르세요')
+            return;
+        }
+            
+
+        
+    document.getElementById("dvCheck").innerHTML=
+    '아이디: '+id+'<br>'
+    +'비밀번호: '+passcode+'&nbsp'
+    +'비밀번호 확인: '+passcode1+'<br>'
+    +'실명: '+name+'<br>'
+    +'성별: '+gender+'<br>'
+    +'생년월일: '+bday+'<br>'
+    +'전화번호: '+mobile+'&nbsp'
+    +'거주지역: '+region+'<br>'
+    +'좋아하는 게임: '+game+'<br>'
+   });
+
+ 
+   
+/*  if(document.getElementById("selRegion").value==''){
+            alert('나라를 하나 선택하세요')
+        } else{
+        document.getElementById("dvCheck").innerHTML=document.getElementById("selRegion").value;
+        }
+
+ */
+</script>
+</html>

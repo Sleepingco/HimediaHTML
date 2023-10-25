@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="radio" name="country" value="Singapore" id="sg">Singapore<br>
+<input type="radio" name="country" value="vietnam" id="vt">Vietnam<br>
+<input type="radio" name="country" value="Canada" id="ca">Canada<br>
+<input type="radio" name="country" value="Thailand" id="th">Thailand<br><br><br>
+
+<input type="checkbox" name="favorite" value="IVE">아이브<br>
+<input type="checkbox" name="favorite" value="NewJeans">뉴진스<br>
+<input type="checkbox" name="favorite" value="BlackPink">블랙핑크<br>
+<input type="checkbox" name="favorite" value="StayC">스테이씨<br>
+<input type="checkbox" name="favorite" value="GrilIdle">아이들<br>
+<input type="checkbox" name="favorite" value="Aespa">에스파<br>
+<input type="checkbox" name="favorite" value="Twice">트와이스<br>
+<div id="dvDisplay"></div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    /* $(document)  //name으로 구분
+    .on('click','input[name=favorite]',function(){//ver1
+        let str='';
+        for (let i = 0; i < ('input[name=favorite]').length; i++) {
+            if($('input[name=favorite]:eq('+i+')').is(':checked')){ //dom 구조 안에 같은 태그로 존재하면 인덱스를 줌 배열로 저장됨
+                str+=$('input[name=favorite]:eq('+i+')').val()+'<br>' //eq는 같은이름중에 is.checked인지 확인하고 체크가 되어있으면 true를 리턴함
+            }
+        }
+        $('#dvDisplay').html(str);
+    }); */
+    
+    /* $(document)
+    .on('click','input[name=favorite]',function(){//ver2
+        let str='';
+        for (let i = 0; i <$('input[name=favorite]:checked').length; i++) {
+                str+=$('input[name=favorite]:checked').eq(i).val()+'<br>' 
+        }
+        $('#dvDisplay').html(str);
+    });  */
+    
+
+    $(document)//each는 각각에 체크된것을 확인하며 체크가 3개되어있으면 3번돈다
+    .on('click','input[name=favorite]',function(){//ver3
+        let str='';
+
+        // $(선택자).each(function(){}) jquery에서는 each를 위,아래처럼 쓸 수 있다/
+            //▲배열
+        // $.each($(선택자),function(){})
+                    //▲배열
+        // $('input[name=favorite]:checked').each(function(){
+        //     str+=$(this).val()+'<br>'
+        // })
+
+        $.each($('input[name=favorite]:checked'),function(){
+            str+=$(this).val()+'<br>'
+        })
+        $('#dvDisplay').html(str);
+    });
+    
+    /* $(document)  //name으로 구분
+    .on('click','[name=country]',function(){
+        let str = $(this).val();
+        $('#dvDisplay').text(str);
+    }); */
+    $(document) //id로 구분
+    .on('click','#sg,#vt,#ca,#th',function(){
+        let str = $(this).val();
+        $('#dvDisplay').text(str);
+    })
+    .on('click','[name=gender]','[name=mountain]','#userid',function(){
+
+    })
+</script>
+</html>

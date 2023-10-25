@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table { border-collapse: collapse;}
+    td { border:1px solid black; width:50px; height:50px;text-align: center; }  
+    .bgNorang { background-color:yellow;}  
+    div{border: 1px solid; width: 40px;height:40px}
+    </style>
+<body>
+    <table>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    let k=1;
+    for(let i=0;i<=4;i++){
+        for(let j=0;j<=4;j++){
+                
+                if(i%2==1){
+                    console.log(i,j)
+                    for(j=4;j>=0;j--){
+                        console.log(i,j)
+                    }
+                }
+                $('table tr:eq('+i+') td:eq('+j+')').text(k++);
+        }
+    }
+</script>
+</html>

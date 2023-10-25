@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+table { border-collapse: collapse;}
+td { border:1px solid black; width:50px; height:50px;text-align: center; }  
+.bgNorang { background-color:yellow;}  
+div{border: 1px solid; width: 40px;height:40px}
+</style>
+<body>
+    <table>
+    <tr><td>(0,0)</td><td>(0,1)</td><td>(0,2)</td><td>(0,3)</td><td>(0,4)</td><td>(0,5)</td></tr>
+    <tr><td>(1,0)</td><td>(1,1)</td><td>(1,2)</td><td>(1,3)</td><td>(1,4)</td><td>(1,5)</td></tr>
+    <tr><td>(2,0)</td><td>(2,1)</td><td>(2,2)</td><td>(2,3)</td><td>(2,4)</td><td>(2,5)</td></tr>
+    <tr><td>(3,0)</td><td>(3,1)</td><td>(3,2)</td><td>(3,3)</td><td>(3,4)</td><td>(3,5)</td></tr>
+    <tr><td>(4,0)</td><td>(4,1)</td><td>(4,2)</td><td>(4,3)</td><td>(4,4)</td><td>(4,5)</td></tr>
+    <tr><td>(5,0)</td><td>(5,1)</td><td>(5,2)</td><td>(5,3)</td><td>(5,4)</td><td>(5,5)</td></tr>
+    
+    <!-- <tr><td>(7,0)</td><td>(7,1)</td><td>(7,2)</td><td>(7,3)</td><td>(7,4)</td><td>(7,5)</td><td>(7,6)</td></tr> -->
+    </table>
+    <br><br>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document)    
+.ready(function(){
+    //eq:equal/gt:greater than/lt:less than
+    // $('table tr:eq(3)').addClass('bgNorang');//인덱스 3번 0부터 시작하므로 4번째 칸이 노랑
+    // $('table tr:eq(3) td:eq(1)').css('background-color','pink');
+    // $('table tr:gt(3)').css('background-color','aqua'); //index가 3보다 큰서 몽땅다(greater)
+    // $('table tr:lt(2)').css('background-color','blue'); //index가 3보다 큰서 몽땅다(greater)
+    // $('table tr:lt(3) td').text('rain'); //tr 안에 있는 모든 td에 텍스트를 넣을 수 있다
+    
+    $('table tr:odd').css('background-color','brown');
+    $('table tr:even').css('background-color','gray');
+    $('div:eq(3)').html('<input type=button value=Hello>'); //DOM구조 안에 있는 같은 라인에 태그면 인덱스 번호가 매겨진다
+    $('div:odd').css('background-color','brown');
+    $('div:even').css('background-color','gray'); 
+    $('table tr:lt(3) td:lt(3)').css('background-color','yellow');
+    $('table tr').eq(3).addClass('bgNorang')
+    /* for(let i=0;i<3;i++){
+        str='table tr:eq('+i+') td:gt(2)';
+        $(str).css('background-color','blue');
+    }
+    for(let i=0;i<3;i++){
+        str='table tr:eq('+i+') td:lt(3)';
+        $(str).css('background-color','yellow');
+    }
+    for(let i=3;i<6;i++){
+        str='table tr:eq('+i+') td:lt(3)';
+        $(str).css('background-color','aqua');
+    }
+    for(let i=3;i<6;i++){
+        str='table tr:eq('+i+') td:gt(2)';
+        $(str).css('background-color','gray');
+    } */
+    
+
+/* for (let i=0;i<4;i++)
+// $('table tr:eq('+i+') td: gt (2)').css('background-color', 'blue'); 
+$('table tr') .eq(i).find('td:gt(2)').css('background-color','blue'); 
+for (let i=3;i<6;i++) 
+$('table tr:eq('+i+') td:gt(2)').css('background-color','gray');
+
+$('table tr:lt(3)').css('background-color', 'yellow');
+$('table tr:gt(2)').css('background-color', 'aqua'); */
+
+/* for (let i = 0; i < 4; i++) {
+  $('table tr').eq(i).find('td:gt(2)').css('background-color', 'blue');
+}
+
+for (let i = 3; i < 6; i++) {
+  $('table tr:eq('+i+') td:gt(2)').css('background-color', 'gray');
+} */
+
+$('table tr:first').css('background-color','green');
+$('table tr:last').css('background-color','pink');
+})
+
+.on('click','td,div',function(){
+    $(this).empty();
+    $(this).css('background-color','white')
+    console.log($(this).index()+','+$(this).parentindex());
+}); 
+</script>
+</html>

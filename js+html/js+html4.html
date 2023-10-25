@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메달</title>
+</head>
+<body>
+    <!-- <input type="radio" name="sex"id="male" value="남성" onclick="showGender()">남성
+    <input type="radio" name="sex"id="female" value="여성" onclick="showGender()">여성
+    <br><br>
+    <input type="radio" name="Medal" id="gold" onclick="showMedal()">금메달
+    <input type="radio" name="Medal" id="silver" onclick="showMedal()">은메달
+    <input type="radio" name="Medal" id="bronze" onclick="showMedal()">동메달
+    <br><br>
+    <input type="checkbox">
+    <div id="dvResult" style="width: 200px;height: 100px;border: 1px solid black;"></div> -->
+    <input type="radio" name="gender"id="male" value="남성" onclick="showMedalist()" onchange="doChange()">남성
+    <input type="radio" name="gender"id="female" value="여성" onclick="showMedalist()">여성
+    <br><br>
+    <input type="radio" name="Medal" id="gold" onclick="showMedalist()">금메달
+    <input type="radio" name="Medal" id="silver" onclick="showMedalist()">은메달
+    <input type="radio" name="Medal" id="bronze" onclick="showMedalist()">동메달
+    <br><br>
+    <input type="checkbox">
+    <div id="dvResult" style="width: 200px;height: 100px;border: 1px solid black;"></div>
+    <input type="button" id="btnRadioset()" value="Radio Set" onclick="doRadioSet()">
+</body>
+<script>
+   /*  function showMedal(){
+        let medalStr;
+        if(document.getElementById("gold").checked){
+            medalStr="금메달";
+       }else if(document.getElementById("silver").checked){
+        medalStr="은메달";
+       }else if(document.getElementById("bronze").checked){
+        medalStr="동메달";
+       }
+       document.getElementById("dvResult").innerHTML=medalStr;
+    }
+    function showGender(){
+        let genderStr;
+       if(document.getElementById("male").checked){
+        genderStr="남성";
+       }else if(document.getElementById("female").checked){
+        genderStr="여성";
+       }
+       document.getElementById("dvResult").innerHTML=genderStr;
+    } */
+
+    
+    /* function showMedalist(){
+        let medalStr='';
+        let genderStr='';
+        if(document.getElementById("gold").checked){
+        medalStr="금메달";
+       }else if(document.getElementById("silver").checked){
+        medalStr="은메달";
+       }else if(document.getElementById("bronze").checked){
+        medalStr="동메달";
+       }
+       if(document.getElementById("male").checked){
+        genderStr="남성";
+       }else if(document.getElementById("female").checked){
+        genderStr="여성";
+       }
+       let medalistStr=medalStr+'&nbsp'+genderStr;
+        document.getElementById("dvResult").innerHTML=medalistStr;
+} */
+
+/* let medalStr='';
+let genderStr='';
+function showMedalist(){
+        if(document.getElementById("gold").checked){
+        medalStr="금메달";
+       }else if(document.getElementById("silver").checked){
+        medalStr="은메달";
+       }else if(document.getElementById("bronze").checked){
+        medalStr="동메달";
+       }
+       if(document.getElementById("male").checked){
+        genderStr="남성";
+       }else if(document.getElementById("female").checked){
+        genderStr="여성";
+       }
+        document.getElementById("dvResult").genderStr+','+medalStr;
+} */
+
+ /* event
+        동작(action)
+        click
+        dblclick 더블클릭
+        mousemove 마우스 움직임
+        blur
+        setfocus
+        mouseenter
+        mouseleave
+        sts는 spring tool suite의 줄임말로 spring으로 코딩하기위한 tool모음으로 이것만 깔면 spring으로 코딩할수 있다.
+        면접때 질문 절대 단답형으로 
+        하지말고 그만하라고 할때 까지 기술을 쭉 기술해야한다 */
+// 함수는 실행순서 상관없이 실행될수 있으나 함수안에 코드는 순서에 따라 실행됨 
+//변수에 가용범위(Scope)를 따로 설정하는 이유는 메모리를 효율적으로 사용하기 위함이다
+//전역 변수를 선언하고 지역변수를 같은 이름으로 선언할수 있다 이런경우 전역변수를 코드안에서 사용할 수 없다.
+//전(지)역 변수(Global Variable)
+let medalStr='';
+let genderStr='';
+
+doRadioSet();//Method 호출 가능 웹브라우저는 코드를 한번 스캔 및 오류 체크를 한 다음 메모리에 적재해두고 코드를 실행함 아래코드에서 let medalStr; let genderStr; doRadioSet(); 만 실행코드다 나머지는 호출되기전까지 실행지 되지 않고 등록만되어있다가 호출(onclick)되면 실행됨
+function showMedal(){
+    // let i= 0; //함수변수 (Function Variable)
+    // i=0;로 선언하면 전역변수가됨
+        if(document.getElementById("gold").checked){
+            medalStr="금메달";
+       }else if(document.getElementById("silver").checked){
+        medalStr="은메달";
+       }else if(document.getElementById("bronze").checked){
+        // let k='';//블럭변수 (Block Variable)
+        medalStr="동메달";
+       }
+       document.getElementById("dvResult").innerHTML=genderStr+','+medalStr;
+    //    gnumber = 15;
+    }
+    // let gnumber = 20; //전역변수 
+    function showGender(){
+        
+       if(document.getElementById("male").checked){
+        genderStr="남성";
+       }else if(document.getElementById("female").checked){
+        genderStr="여성";
+       }
+       document.getElementById("dvResult").innerHTML=genderStr+','+medalStr;
+    }
+    function showMedalist(){
+        showGender();
+        showMedal();
+    }
+    function doRadioSet(){
+        document.getElementById("female").checked = true;
+        document.getElementById("silver").checked = true;
+    }
+    function doChange(){
+       
+        }
+</script>
+</html>

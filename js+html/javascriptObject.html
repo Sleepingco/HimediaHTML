@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+/* let ar=[];
+    ar.push("monday");
+    ar.push("tuesday")
+    ar.push("wednesday")
+    ar.push("thursday")
+    ar.push("friday")
+    ar.push("saturday")
+    ar.push("sunday")
+    documnet.write(ar[4]);//friday */
+
+    /* //let ob = {}; //빈배열 생성
+    let ob ={"name":"홍길동","age":"25","city":"한양","gender":"남성",'array':[2,3,5,7,11,13],'obj':{'name':'himedia','area':'ilsan','class':'Developer Training'}}; //key-va;ue couple(키값 쌍)
+    ob['행적']='가출';
+    ob.action='도술';//문자열로 값을 추가할때 이런식으로 할 수 도 있으나
+    //ob.11='없당'; //숫자형에는 안됨 활용도가 떨어짐
+    let key1='name'
+    ob[10]='활빈당'
+    ob['name']='임꺽정'//이렇게 쓰면 기존 데이터가 대처됨 업데이트하는 방법
+    ob['city']=null;//값을 없앨수도있음
+    delete ob['city'];
+    document.write('이름: '+ob[key1]+'<br>');//'홍길동' ob.key1은 불가능
+    document.write('나이: '+ob.gender+'<br>');//남성 //이렇게 쓸 수도 있음 한글은 불가
+    document.write('지역: '+ob['city']+'<br>');//근데 이방법이 활용도가 훨씬 높다
+    document.write('성별: '+ob['gender']+'<br>');
+    document.write('행적: '+ob['행적']+'<br>');
+    document.write('10: '+ob[10]+'<br>');
+    document.write( ob['array'][2]+'<br>');
+    document.write( ob.array[2]+'<br>');
+    document.write('[area]= '+ob['obj']['area']+'<br>')
+    document.write('.area= '+ob.obj.area+'<br>')
+
+    //객체명{키1:값1,키2:값2,...키n:값n};
+    //키=문자열 숫자만 가능//값=문자열/숫자/boolean/함수/객체/배열
+    //키 값을 쓸 수 있지만 추천안함
+    //없는 키값을쓰면 undefined가 나옴
+    let oMenu = {'Latte':3000,'Mocca':3500,'Americano':2500,'Espresso':2000,'IceAge':3500,'믹스커피':100};
+    document.write('Latte= '+oMenu['Latte']+'<br>')
+    document.write('Mocca= '+oMenu['Mocca']+'<br>')
+    document.write('IceAge= '+oMenu['IceAge']+'<br>')
+    document.write('Americano= '+oMenu['Americano']+'<br>')
+    document.write('Mocca= '+oMenu['Mocca']+'<br>')
+    document.write('믹스커피= '+oMenu['믹스커피']+'<br>')
+
+    
+    // let ob ={};
+    // let key1='name';
+    // let value1 = 'john'; 
+    // ob[key1]=value1;
+    // ob={'name':'john'}; */
+
+
+
+
+    /* // coloring(); //함수 호출 1
+    // let ob = {'func':coloring};
+    ob['func'](7); //함수호출 2
+    //함수이름뒤에'()'가 있으면 호출 '()'없으면 등록
+    function coloring(k){ //안에 들어간 'k'는 파라미터
+        document.write('coloring ['+k+']')
+    } */
+   
+    //요것도가능
+   /* let ob = {'func':function(k,str){ //'k' 는 밖에서 오늘 값을 전달받는 역할을 한다 매게변수 Parameter Argumnet라고 부른다
+    document.write('coloring ['+str+k+']'+'<br>');
+    }}
+    ob['func'](7,'Hello World'); //함수호출 2//문자열도 가능
+
+    //JavaScript Object Notation==JSON(자바스크립트 객체 표기법)<-전송 데이터 포맷의 일종▼
+    let str = "{'name':'john','age':25,'area':'Ilsan','birthday':'0608','gender':'Male'}"; */
+
+    /* let ob = {'func':function(k){ //'k' 는 밖에서 오늘 값을 전달받는 역할을 한다 매게변수 Parameter Argumnet라고 부른다
+            document.write('fuction call ['+k+']');
+    }}
+    ob['func'](7);
+    //JavaScript Object Notation==JSON(자바스크립트 객체 표기법)<-전송 데이터 포맷의 일종▼
+    let str = "{'name':'john','age':25,'area':'Ilsan','birthday':'0608','gender':'Male'}"; */
+    
+
+/* let ob = {};
+let oMenu = {'Latte': 3000, 'Mocca': 3500};
+for (let k in oMenu) {
+    document.write(k + ': ' + oMenu[k] + '<br>');
+}
+let a = prompt('메뉴명');
+let b = prompt('가격');
+while (a !== '') {
+    ob[a] = b;
+    a = prompt('메뉴명');
+    if (a == '') {
+        break;
+    }
+    b = prompt('가격');
+}
+for (let k in ob) {
+    document.write(k + ': ' + ob[k] + '<br>');
+} */
+
+
+let oMenu = {};
+
+while (true) {
+    let a = prompt('메뉴명');
+    if (a == '')break;
+    oMenu[a] = prompt('가격');;
+}
+for(let a in oMenu) {
+        document.write(a + ' : ' + oMenu[a] + '<br>');
+}
+
+
+</script>
+</html>

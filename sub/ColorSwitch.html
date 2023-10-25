@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;height: 200px;
+        border: 1px solid black;
+    }
+    td{text-align: center;}
+</style>
+<body>
+    <table>
+        <tr>
+            <td><div id="dvRed"></div></td>
+            <td><div id="dvGreen"></div></td>
+            <td><div id="dvBlue"></div></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btnRed" value="빨강"></td>
+            <td><input type="button" id="btnGreen" value="녹색"></td>
+            <td><input type="button" id="btnBlue" value="파랑"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    //버튼 3개중 하나를 누르면 해당 div의 바탕색이 설정된 색상으로 변하고
+    //1초후에 나머지 2개 div는 바탕색이 흰색으로 변한다
+    let timeset=null;
+   
+    document.getElementById("btnRed").addEventListener('click',function(){
+        document.getElementById('dvRed').style="background-color: red"
+        timeset=setTimeout(red,1000);
+    });
+    document.getElementById("btnGreen").addEventListener('click',function(){
+        document.getElementById('dvGreen').style="background-color: green"
+        timeset=setTimeout(green,1000);
+    });
+    document.getElementById("btnBlue").addEventListener('click',function(){
+        document.getElementById('dvBlue').style="background-color: blue"
+        timeset=setTimeout(blue,1000);
+    });
+
+    function red(){
+        document.getElementById('dvGreen').style="background-color: white"
+        document.getElementById('dvBlue').style="background-color: white"
+    }
+    function green(){
+
+        document.getElementById('dvRed').style="background-color: white"
+        document.getElementById('dvBlue').style="background-color: white"
+    }
+    function blue(){
+        document.getElementById('dvRed').style="background-color: white"
+        document.getElementById('dvGreen').style="background-color: white"
+
+    }
+
+
+/* ======================== */
+
+/* document.getElementById("btnRed").addEventListener('click',function(){
+    document.getElementById('dvRed').style="background-color: red"
+        timeset=setTimeout(function(){
+            document.getElementById('dvGreen').style="background-color: white"
+            document.getElementById('dvBlue').style="background-color: white"
+        },1000);
+    });
+
+document.getElementById("btnGreen").addEventListener('click',function(){
+    document.getElementById('dvGreen').style="background-color: green"
+        timeset=setTimeout(function(){
+            document.getElementById('dvRed').style="background-color: white"
+            document.getElementById('dvBlue').style="background-color: white"
+        },1000);
+    });
+
+document.getElementById("btnBlue").addEventListener('click',function(){
+    document.getElementById('dvBlue').style="background-color: blue"
+        timeset=setTimeout(function(){
+            document.getElementById('dvRed').style="background-color: white"
+            document.getElementById('dvGreen').style="background-color: white"
+        },1000);
+    }); */
+
+
+
+</script>
+</html>

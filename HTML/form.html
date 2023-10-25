@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="URL" method=""></form>
+    <label for="Name">이름</label><input type="text"><hr>
+    <label>동의</label><input type="checkbox">
+    <label for="male" name="sex">남성</label><input type="radio" name="sex">
+    <label for="female" name="sex">여성</label><input type="radio" name="sex"><br>
+    <input type="date"><br> <!-- getfrom window os -->
+    <input type="datetime-local"><br>
+    <input type="number" min="0" max="5"><br>
+    <input type="number"><br>
+    <textarea></textarea>
+   <!--  similar like input type= text
+    but there's a diffrence 'textarea' can resize text box line -->
+    <select size="2"name="frachise" id="loc" multiple>
+        <option value="">일산</option>
+        <option value="">강남</option>
+        <option value="">구로</option>
+        <option value="">천안</option>
+        <option value="">영등포</option>
+    </select><br>
+    <button>continue</button><br>
+    <input type="button" value="실행하기"><!-- <<-이쪽을 쓰기를 권장 -->
+    <input type="submit" value="제출"> <!-- form 태그를 실행시킨다 form태그 안에 데이터가 서버로 전송된다 -->
+    <input type="reset" value="리셋"> <!-- form태그 안의 모든 데이터를 clear 한다 -->
+</body>
+</html>

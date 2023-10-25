@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width:50px;height:50px;border:1px solid gray;text-align: center; vertical-align: baseline;
+    }    
+    .bgRed{
+        background-color: red;
+    }
+    .bgWhite{
+        background-color: white;
+    }
+</style>
+<body>
+<table>
+<tr><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td>
+    <td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td></tr>
+<tr><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td>
+    <td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td><td><div ></div></td></tr><tr>
+</table>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+/* $(document)
+.on('click','div',function(){ //add클래스와 css를 같이쓰면 속도문제로 잘안됨
+    $(this).addClass('bgRed');
+    $('div').addClass('bgWhite');
+   
+}); */
+/* $(document)
+.on('click','div',function(){
+    $('div').css('background-color',"white");
+    $(this).css('background-color','red');
+}); */
+/* $(document).on('click', 'div', function(){
+    if ($(this).hasClass('bgRed')) {
+        $(this).removeClass('bgRed');
+        $(this).addClass('bgWhite');
+    }
+});
+셋다 같은 코드여라*/
+
+
+let i;
+ $(document)
+.ready(function(){
+    i=0;
+})
+.on('click','div',function(){
+    
+    $('div').css('background-color','red');
+    $(this).css('background-color',"white");
+})
+ .on('click','div',function(){
+    $('div').text('');
+    $(this).text(++i);
+    
+});
+
+</script>
+</html>

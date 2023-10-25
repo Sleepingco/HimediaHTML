@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table,td{
+            border: solid 1px;border-collapse: collapse;
+        }
+        .city{
+            color: aqua;
+            padding: 20px;
+        }
+        .main{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>ABC</caption>
+        <head>
+            <tr>
+                <th>이름</th>
+                <th>생년월일</th>
+                <th>거주지역</th>
+                <th>사무실</th>
+            </tr>
+        </head>
+        <body>
+            <tr>
+                <td>john</td>
+                <td rowspan="2">0524</td>
+
+                <td colspan="2" >Busan</td>
+             
+
+            </tr>
+            <tr>
+                <td>jane</td>
+                <td>Seoul</td>
+                <td>Ilsan</td>
+            </tr>
+            <tr>
+                <td rowspan="2">james</td>
+                <td>1212</td>
+                <td colspan="2">Cheonan</td>
+            </tr>
+            <tr>
+                <td rowspan="2">0308</td>
+                <td rowspan="2">Ilsan</td>
+                <td>Seoul</td>
+            </tr>
+            <tr>
+                <td>Jason</td>
+                <td>Incheon</td>
+            </tr>
+        </body>
+    </table>
+    <br><hr><br>
+    <ul class="city main">
+        <li>휴대폰</li>
+        <li>자전거</li>
+        <li>컴퓨터</li>
+    </ul>
+    <ol type="I">
+        <li>&lt;삼성&gt;</li>
+        <li>엘&nbsp;지</li>
+        <li>케이&amp;티</li>
+    </ol>
+    <dl>
+        <dt>&quot;WWW&quot;</dt>
+        <dd>&apos;World Wide web&apos;</dd>
+        <dt>STS</dt>
+        <dd>Spring Tool Suite</dd>
+        <dt>IDE</dt>
+        <dd>Integrated Development Enciorment</dd>
+    </dl>
+</body>
+<script>
+    alert("Hello world")
+</script>
+<!-- <script></script>는 어디에 있던 상관없다 보통은 body와 html 사이에 넣는다 -->
+</html>

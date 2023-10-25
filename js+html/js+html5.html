@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과일</title>
+</head>
+<body>
+    <!-- <input type="checkbox" name="fruit" value="참외" id="" onclick="javascript:alert('참외사세요');alert('시러요')">참외  이코드는 안좋은 코드이다 body는 design에 영역이고 script가 handleing에 영역이다 그러므로 body에서 script를 쓰는건 좋지 않다 -->
+
+    <input type="checkbox" name="fruit" value="참외" id="" onclick="display()">참외
+    <input type="checkbox" name="fruit" value="수박" id="" onclick="display()">수박
+    <input type="checkbox" name="fruit" value="멜론" id="" onclick="display()">멜론<br>
+    <input type="checkbox" name="fruit" value="사과" id="" onclick="display()">사과
+    <input type="checkbox" name="fruit" value="포도" id="" onclick="display()">포도
+    <input type="checkbox" name="fruit" value="딸기" id="" onclick="display()">딸기<br><br>
+
+    <div id="dvResult" style="width: 200px;height: 100px;border: 1px solid blue;"></div>
+</body>
+<script>
+
+    
+    
+    function display(){
+        let pstr='';
+        for(let i=0; i<document.getElementsByName("fruit").length;i++){
+            if(document.getElementsByName("fruit")[i].checked){
+                if(pstr!="")pstr+=",";
+                pstr+=document.getElementsByName("fruit")[i].value;
+            }
+        }
+        document.getElementById("dvResult").innerHTML=pstr;
+    }
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>menu</title>
+</head>
+<body>
+    <h5 style="text-align: center;">카페주문관리</h5>
+    <form action="" method="get">
+    <table align="center" style="width: 95%; border-collapse: collapse; ">
+        
+        <tr>
+            <td valign=top style="width: 30%;border: 1px solid black;">
+                <table>
+                    <tr>
+                        <td colspan="2" align="right"><input type="button" id="btnAddMenu" name="btnAddMenu" value="메뉴추가"></td>
+                    </tr>
+                <tr>
+                 <td colspan="2"  align="center">
+                 <select name="menu" id="menu" size="20" style="font-size:20pt;">
+                    <option value="Latte,3000">Latte , 3000</option>
+                    <option value="Mocca , 3500">Mocca , 3500</option>
+                     <option value="Americano , 2500">Americano , 2500</option>
+                     <option value="Espresso , 2000">Espresso , 2000</option>
+                    </select>
+                 </td>
+                </tr> 
+                    <tr><td><label style="font-size: 35px;">메뉴명</label></td><td><input type="text" id="order" readonly></td></tr>
+                    <tr><td><label style="font-size: 35px;">수량</label></td><td><input type="number" value="" required min="1"max="99" size="2" id="qty"></td></tr>
+                    <tr><td><label style="font-size: 35px;">합계</label></td><td><input type="number" size="6" id="sum" name="sum" readonly></td></tr>
+                    <tr><td colspan="2" style="text-align: center;">
+                        <input type="button" value="주문" id="submit">&nbsp;
+                        <input type="button" value="취소" id="cancel"></td></tr> 
+                        <input type="hidden" id="net" name="net">
+                </table>
+            </td>
+            <td style="width: 5%;"></td>
+            <td style="vertical-align: top;width: 30%; border: 1px solid black;">
+                <table  >
+                    <tr>
+                        <td align="center" colspan="2">
+                            <select name="selOrder" id="selOrder" size="21" style="font-size:20pt;">
+                                <!--  <option value="">Latte x2, 6000</option>
+                                <option value="">Mocca x1, 3000</option> -->
+                    </select>
+                         </td>
+                    </tr>
+                  
+                    <tr><td align="center"><label style="font-size: 35px;">총액</label><input type="number" min="0" max="999999" id="selSum"></td></tr>
+                    <tr><td align="center"><label style="font-size: 35px;">모바일</label><input type="phone" max="99999999999" id="phone"></td></tr>
+                    <tr><td style="text-align: center;"><input type="button" id="finalSubmit" value="주문 완료">&nbsp;<input type="button" id="cancelOrder" value="주문 취소"></td></tr>
+                
+                </table>
+            </td>
+            <td style="width: 5%;"></td>
+            <td valign=top style="width: 30%;border: 1px solid black;">
+                <table >
+                    <tr><td colspan="2" align="center"><select name="sales" id="sales" size="19" >
+                        <!-- <option value="44445555" >[23/05/25 13:30] 44445555 9500원</option>
+                        <option value="77778888">[23/05/25 13:35] 7778888 12000원</option>
+                        <option value="" >[23/05/25 13:45] -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9500원</option> -->
+                    </select></td></tr>
+                    <tr><td align="center"><label style="font-size: 35px;">총매출액</label><input type="number" min="0"max="99999999" id="totalSales" readonly>원</td></tr>
+                </table>
+            </td>
+        </tr>
+                
+</table>
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="./AddMenu.js"></script>
+</html>

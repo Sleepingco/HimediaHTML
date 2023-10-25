@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drill01</title>
+</head>
+<style>
+div {
+    width:200px; height:150px; background-color:aqua;
+}
+</style>
+<body>
+    <table>
+    <tr>
+        <td><div></div></td> <td><div></div></td> <td><div></div></td> <td><div></div></td>
+    </tr>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+// 각 div에 mouse가 들어가면, 그 div의 인덱스번호가 표시, let x=$(this).index();
+//  mouse가 빠져나오면, 인덱스번호가 사라짐    
+$(document)
+.on('mouseenter','div',function(){
+    let x = $(this).index('div');
+    $(this).html('<font size=30px>'+x);
+})
+.on('mouseleave','div',function(){
+    $(this).text('');
+})
+</script>
+</html>

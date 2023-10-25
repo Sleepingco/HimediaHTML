@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table { border-collapse: collapse;}
+    td { border:1px solid black; width:50px; height:30px; }  
+</style>
+<body>
+    <button id="btnAdd">메뉴추가</button>
+    <input type="number" id="rownum"><button id="btnRemove">메뉴 삭제</button>
+    <br><br>
+    <table id="tblMenu"></table>
+
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    // 메뉴추가를 누르면 prompt가 팝업해서 메뉴명입력을 기다린다.
+    // 메뉴명을 넣고 확인(enter)하면, 테이블에 메뉴명이 추가
+    /* $(document)  //내 코드
+    .on('click','#btnAdd',function(){
+        let addMenu = prompt('메뉴입력');
+        $('#tblMenu').append('<tr><td>'+addMenu+'</td></tr>');
+        while(true){
+            if(addMenu=='끝'){
+                return false;
+            }else{
+                addMenu = prompt('메뉴입력');
+                $('#tblMenu').append('<tr><td>'+addMenu+'</td></tr>');
+            }
+        }
+        
+    })
+
+
+  .on('click', '#btnRemove', function() {
+    let i = $('#rownum').val();
+    i = parseInt(i);
+    $(`table tr:eq(${i})`).remove();
+  }); */
+
+  $(document)   //강사님 코드
+    .on('click','#btnAdd',function(){
+        let str= prompt('메뉴입력');
+       if(str!=null && str!=''){
+        str='<tr><td>'+str+'</td></tr>';
+        $('#tblMenu').append(str);
+       }
+    })
+  .on('click', '#btnRemove', function() {
+    if($('#rownum').val()=='')return false;
+    $('#tblMenu tr:eq('+$('#rownum').val()+')').remove();
+  });
+  
+</script>
+</html>

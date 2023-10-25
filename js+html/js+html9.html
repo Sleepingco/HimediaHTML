@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTeimout</title>
+</head>
+<body>
+    <label id="lblTime" style="background-color: yellow;"></label><br>
+    <input type="button" id="btnStart" value="start">&nbsp;
+    <input type="button" id="btnStop" value="stop">
+</body>
+<script>
+let timeset=null;
+document.getElementById("btnStart").addEventListener('click',function(){
+    timeset=setInterval(function(){
+        document.getElementById("lblTime").innerHTML = new Date;
+    },1000);
+    
+});
+
+document.getElementById("btnStop").addEventListener('click',function(){
+    if(timeset==null) return;
+    clearInterval(timeset);
+    document.getElementById('lblTime').innerHTML="TimeInterval cancelled.";
+});
+
+/* document.getElementById("btnStart").addEventListener('click',function(){
+    timeset=setInterval(showTime,1000);
+    document.getElementById("lblTime").innerHTML = new Date;
+});
+
+function showTime(){
+    document.getElementById("lblTime").innerHTML = new Date;
+} */
+</script>
+</html>

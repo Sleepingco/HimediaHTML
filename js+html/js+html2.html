@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userId" value="Hello world"><br><br>
+    <div id="dvDisplay" style="width:200px; height: 100px; background-color: yellow;border: 1px solid black;">Hello world</div><br><br>
+    <div id="dvDisplay2" style="width:200px; height: 100px; background-color: yellow;border: 1px solid black;">Hello world</div><br><br>
+    <label id="lbl">Hello world</label><br><br>
+    <textarea name="" id="txt" cols="30" rows="10">Hello world</textarea><br><br>
+    <input type="button" id="btnGo" value="changeText" onclick="changeText()"> <!-- 버튼을 click 했을 때, changeText라는 함수를 실행(호출) -->
+    <input type="button" id="btnClear" value="clear Div"onclick="clearDiv()"><br><br>
+</body>
+<script>
+    let k = document.getElementById("userId");
+    let s = k.value;
+    document.write(s+"<br>");//read
+
+    k.value = "Friday";
+    s = k.value;
+    document.write(s+"<br>");//update
+
+
+    /* function changeText(){ //함수function
+        let k  = document.getElementById("userId");
+        k.value = "Friday";
+        k = document.getElementById("btnGo");
+        k.value = "누르기";
+    } */
+
+/* function changeText(){
+    let i=prompt('아무거나 입력');
+    let k = document.getElementById("userId");
+    k.value = i;
+} */
+/* function changeText(){
+    let i=prompt('아무거나 입력');
+    let k = document.getElementById("userId").value = i;
+} */
+
+/* function changeText(){
+    let k = document.getElementById("userId").value = prompt('아무거나 입력');
+} */
+
+/* function changeText(){
+    let k = document.getElementById("userId").value = 'good morning';
+    document.getElementById("dvDisplay").innerHTML=document.getElementById("userId").value;
+    document.getElementById("dvDisplay").innerHTML='<select><option>Korea</option><option>USA</option><option>singapore</option></select>';//innerHtml은 html tag 를 넣을수 있다
+    document.getElementById("dvDisplay2").innerText='<select><option>Korea</option><option>USA</option><option>singapore</option></select>';
+    document.getElementById("lbl").innerHTML=document.getElementById("userId").value;
+    document.getElementById("txt").value=document.getElementById("userId").value;
+}
+function clearDiv(){
+    document.getElementById("dvDisplay").innerHTML=null;
+    console.log(document.getElementById("dvDisplay2").innerHTML);
+} */
+/* 태그별 값은 넣는법
+<input> .value
+<textarea>.value
+<div> .innerHTML,.innerText
+<label>.innerHTML
+ */
+</script>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./favicon2.ico">
+</head>
+<style>
+    body{
+        background-image:url('./image/puppy.webp');
+        background-attachment: fixed;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+    /* px로 값을주면 그림의 크기 %로 주면 웹브라우저 기준으로 몇%로 차지하게 할거냐라는 의미 */
+    table{
+        border-collapse: collapse;
+    }
+    th,td{
+        border:1px solid gray;
+    }
+    th{
+        color: azure;
+        background-color: black;
+    }
+    td{
+        text-align: center;
+    }
+    td:nth-child(2), td:nth-child(5){
+        text-align: right;
+    }
+    #tbl td{
+        width: 50px;
+        text-align: center;
+    }
+       #tbl tr:nth-child(even) {
+        background-color: aqua;
+       }
+       #tbl tr:nth-child(odd) {
+        background-color: red;
+       }
+</style>
+<body>
+    <h1 style="text-align: center;">home</h1>
+
+    <table >
+        <thead>
+            <tr>
+                <th style="width: 50px;">이름</th>
+                <th style="width: 40px;">성별</th>
+                <th style="width: 100px;">번호</th>
+                <th style="width: 80px">지역</th>
+                <th style="width: 100px;">생일</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>쉐리</td>
+                <td>여</td>
+                <td>1234546</td>
+                <td>인천</td>
+                <td>4월5일</td>
+            </tr>
+            <tr>
+                <td>짐</td>
+                <td rowspan="3">남</td>
+                <td>45679879</td>
+                <td>스튜존</td>
+                <td>5월4일</td>
+            </tr>
+            <tr>
+                <td>쉔</td>
+                <!-- <td>남</td> -->
+                <td>12345</td>
+                <td rowspan="2">internet</td>
+                <td rowspan="2">1월1일</td>
+            </tr>
+            <tr>
+                <td>김</td>
+                <!-- <td>남</td> -->
+                <td>12345</td>
+                <!-- <td>internet</td> -->
+                <!-- <td>0101</td> -->
+            </tr>
+        </tbody>
+    </table>
+    <br><hr><br>
+    <table id="tbl">
+        <tbody>
+            <tr>
+                <td rowspan="4">A</td>
+                <td colspan="2">B</td>
+                
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td colspan="2">E</td>
+               
+            </tr>
+            <tr>
+                
+                <td>B</td>
+                <td colspan="4">C</td>
+
+
+
+            </tr>
+            <tr>
+                
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

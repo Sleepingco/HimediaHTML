@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name1">
+    <label id="lblName1"></label>
+    <br><br>
+    <input type="button" id="btnMove" value="Move">
+    <br><br>
+    <div id="dvStyle"></div>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+//id=name1인 input tag에 입력된 내용을 id=lblName1인 레이블에 이동(복사x)
+$(document)
+.on('click','#btnMove',function(){
+    let str = $('#name1').val();
+    $('#lblName1').text(str)
+    $('#lblName1').css({'background-color':'yellow','border':'1px solid green','color':'red'});
+    $('#name1').val('');
+
+    $('#dvStyle').css({'background-color':'aqua','border':'1px solid blue'});
+    $('#dvStyle').css('font-size','10px');
+    str = $('#lblName1').css('background-color')+'<br>';
+    str += $('#lblName1').css('color')+'<br>';
+    str += $('#lblName1').css('border');
+
+    $('#dvStyle').text(str);//br등 태그를 문자 그대로씀 (렌더링x)
+    $('#dvStyle').html(str);// html태그가 적용됨
+})
+;
+</script>
+</html>
